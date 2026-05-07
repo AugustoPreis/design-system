@@ -5,6 +5,7 @@ export { Stack, type StackProps } from './components/stack';
 export { Text, type TextProps } from './components/text';
 export { Spinner, type SpinnerProps } from './components/spinner';
 export { Skeleton, type SkeletonProps } from './components/skeleton';
+export { Heading, type HeadingProps } from './components/heading';
 export {
   Tooltip,
   TooltipContent,
