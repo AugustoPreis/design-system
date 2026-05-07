@@ -17,6 +17,7 @@ export {
 // Tier 2 - Forms
 export { Textarea, type TextareaProps } from './components/textarea';
 export { Switch, type SwitchProps } from './components/switch';
+export { Input, type InputProps } from './components/input';
 export {
   SelectContent,
   SelectGroup,
