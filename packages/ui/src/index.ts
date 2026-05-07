@@ -1,3 +1,10 @@
+// Tier 3 - Feedback
+export {
+  Alert,
+  AlertDescription,
+  type AlertProps,
+  AlertTitle,
+} from './components/alert';
 // Tier 0 - Layout
 export { Flex, type FlexProps } from './components/flex';
 export { Grid, type GridProps } from './components/grid';
