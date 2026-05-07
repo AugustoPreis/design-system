@@ -1,3 +1,5 @@
+// Tier 2 - Forms
+export { Checkbox, type CheckboxProps } from './components/checkbox';
 // Tier 1 - Foundation
 export { Button, type ButtonProps, buttonVariants } from './components/button';
 // Tier 0 - Layout
