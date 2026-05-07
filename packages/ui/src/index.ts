@@ -50,3 +50,15 @@ export {
   ToastTitle,
   ToastViewport,
 } from './components/toast';
+export {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from './components/drawer';
