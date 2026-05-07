@@ -27,6 +27,12 @@ export {
   SelectTrigger,
   SelectValue,
 } from './components/select';
+export {
+  RadioGroup,
+  RadioGroupItem,
+  type RadioGroupItemProps,
+  type RadioGroupProps,
+} from './components/radio-group';
 
 // Tier 3 - Feedback
 export {
