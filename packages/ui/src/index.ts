@@ -8,6 +8,9 @@ export {
   TooltipTrigger,
 } from './components/tooltip';
 
+// Tier 2 - Forms
+export { Textarea, type TextareaProps } from './components/textarea';
+
 // Tier 3 - Feedback
 export {
   Toast,
