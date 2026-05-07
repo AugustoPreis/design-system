@@ -1,3 +1,5 @@
+// Tier 0 - Layout
+export { Box, type BoxProps } from './components/box';
 // Tier 1 - Foundation
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 // Tier 3 - Feedback
