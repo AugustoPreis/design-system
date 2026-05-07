@@ -1,0 +1,27 @@
+{
+  "name": "design-system-root",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @ds/ui dev",
+    "build": "pnpm --filter @ds/ui build",
+    "test": "pnpm --filter @ds/ui test",
+    "test:e2e": "pnpm --filter @ds/ui test:e2e",
+    "lint": "pnpm --filter @ds/ui lint",
+    "format": "pnpm --filter @ds/ui format",
+    "type-check": "pnpm --filter @ds/ui type-check",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}
