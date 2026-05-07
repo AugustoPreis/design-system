@@ -1,4 +1,5 @@
 // Tier 0 - Layout
+export { Grid, type GridProps } from './components/grid';
 export { Stack, type StackProps } from './components/stack';
 
 // Tier 1 - Foundation
