@@ -1,3 +1,6 @@
+// Tier 0 - Layout
+export { Stack, type StackProps } from './components/stack';
+
 // Tier 1 - Foundation
 export { Text, type TextProps } from './components/text';
 export {
