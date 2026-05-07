@@ -17,6 +17,7 @@ export {
 } from './components/tooltip';
 
 // Tier 2 - Forms
+export { FormField, type FormFieldProps } from './components/form-field';
 export { Textarea, type TextareaProps } from './components/textarea';
 export { Switch, type SwitchProps } from './components/switch';
 export { Input, type InputProps } from './components/input';
