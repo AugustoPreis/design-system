@@ -1,28 +1,17 @@
-// Tier 2 - Forms
-export { Checkbox, type CheckboxProps } from './components/checkbox';
-// Tier 1 - Foundation
-export { Button, type ButtonProps, buttonVariants } from './components/button';
 // Tier 0 - Layout
 export { Box, type BoxProps } from './components/box';
-// Tier 1 - Foundation
-export { Badge, type BadgeProps, badgeVariants } from './components/badge';
-// Tier 3 - Feedback
-export {
-  Alert,
-  AlertDescription,
-  type AlertProps,
-  AlertTitle,
-} from './components/alert';
-// Tier 0 - Layout
+export { Container, type ContainerProps } from './components/container';
 export { Flex, type FlexProps } from './components/flex';
 export { Grid, type GridProps } from './components/grid';
 export { Stack, type StackProps } from './components/stack';
 
 // Tier 1 - Foundation
-export { Text, type TextProps } from './components/text';
-export { Spinner, type SpinnerProps } from './components/spinner';
-export { Skeleton, type SkeletonProps } from './components/skeleton';
+export { Badge, type BadgeProps, badgeVariants } from './components/badge';
+export { Button, type ButtonProps, buttonVariants } from './components/button';
 export { Heading, type HeadingProps } from './components/heading';
+export { Skeleton, type SkeletonProps } from './components/skeleton';
+export { Spinner, type SpinnerProps } from './components/spinner';
+export { Text, type TextProps } from './components/text';
 export {
   Tooltip,
   TooltipContent,
@@ -33,10 +22,15 @@ export {
 } from './components/tooltip';
 
 // Tier 2 - Forms
+export { Checkbox, type CheckboxProps } from './components/checkbox';
 export { FormField, type FormFieldProps } from './components/form-field';
-export { Textarea, type TextareaProps } from './components/textarea';
-export { Switch, type SwitchProps } from './components/switch';
 export { Input, type InputProps } from './components/input';
+export {
+  RadioGroup,
+  RadioGroupItem,
+  type RadioGroupItemProps,
+  type RadioGroupProps,
+} from './components/radio-group';
 export {
   SelectContent,
   SelectGroup,
@@ -47,24 +41,28 @@ export {
   SelectTrigger,
   SelectValue,
 } from './components/select';
-export {
-  RadioGroup,
-  RadioGroupItem,
-  type RadioGroupItemProps,
-  type RadioGroupProps,
-} from './components/radio-group';
+export { Switch, type SwitchProps } from './components/switch';
+export { Textarea, type TextareaProps } from './components/textarea';
 
 // Tier 3 - Feedback
 export {
-  Toast,
-  ToastAction,
-  ToastClose,
-  ToastDescription,
-  Toaster,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from './components/toast';
+  Alert,
+  AlertDescription,
+  type AlertProps,
+  AlertTitle,
+} from './components/alert';
+export {
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogRoot,
+  DialogTitle,
+  DialogTrigger,
+} from './components/dialog';
 export {
   DrawerClose,
   DrawerContent,
@@ -78,14 +76,12 @@ export {
   DrawerTrigger,
 } from './components/drawer';
 export {
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogOverlay,
-  DialogPortal,
-  DialogRoot,
-  DialogTitle,
-  DialogTrigger,
-} from './components/dialog';
+  Toast,
+  ToastAction,
+  ToastClose,
+  ToastDescription,
+  Toaster,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from './components/toast';
