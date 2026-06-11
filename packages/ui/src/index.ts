@@ -1,6 +1,7 @@
 // Tier 0 - Layout
 export { Box, type BoxProps } from './components/box';
 export { Container, type ContainerProps } from './components/container';
+export { Divider, type DividerProps } from './components/divider';
 export { Flex, type FlexProps } from './components/flex';
 export { Grid, type GridProps } from './components/grid';
 export { Stack, type StackProps } from './components/stack';
