@@ -9,6 +9,7 @@ export { Stack, type StackProps } from './components/stack';
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 export { Button, type ButtonProps, buttonVariants } from './components/button';
 export { Heading, type HeadingProps } from './components/heading';
+export { Icon, type IconName, type IconProps } from './components/icon';
 export { Skeleton, type SkeletonProps } from './components/skeleton';
 export { Spinner, type SpinnerProps } from './components/spinner';
 export { Text, type TextProps } from './components/text';
