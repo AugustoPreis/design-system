@@ -25,6 +25,7 @@ export {
 export { Checkbox, type CheckboxProps } from './components/checkbox';
 export { FormField, type FormFieldProps } from './components/form-field';
 export { Input, type InputProps } from './components/input';
+export { Label, type LabelProps } from './components/label';
 export {
   RadioGroup,
   RadioGroupItem,
