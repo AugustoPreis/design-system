@@ -44,6 +44,15 @@ export {
 export { Switch, type SwitchProps } from './components/switch';
 export { Textarea, type TextareaProps } from './components/textarea';
 
+// Tier 2.5 - Overlay
+export {
+  PopoverAnchor,
+  PopoverClose,
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from './components/popover';
+
 // Tier 3 - Feedback
 export {
   Alert,
