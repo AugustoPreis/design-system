@@ -45,6 +45,14 @@ export {
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 export { Button, type ButtonProps, buttonVariants } from './components/button';
 export { Heading, type HeadingProps } from './components/heading';
+export {
+  List,
+  ListItem,
+  type ListItemProps,
+  type ListProps,
+  OrderedList,
+  type OrderedListProps,
+} from './components/list';
 export { Skeleton, type SkeletonProps } from './components/skeleton';
 export { Spinner, type SpinnerProps } from './components/spinner';
 export { Text, type TextProps } from './components/text';
