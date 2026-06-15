@@ -5,6 +5,26 @@ export { Flex, type FlexProps } from './components/flex';
 export { Grid, type GridProps } from './components/grid';
 export { Stack, type StackProps } from './components/stack';
 
+// Tier 1 - Data
+export {
+  Table,
+  TableBody,
+  type TableBodyProps,
+  TableCaption,
+  type TableCaptionProps,
+  TableCell,
+  type TableCellProps,
+  TableFooter,
+  type TableFooterProps,
+  TableHead,
+  TableHeader,
+  type TableHeaderProps,
+  type TableHeadProps,
+  type TableProps,
+  TableRow,
+  type TableRowProps,
+} from './components/table';
+
 // Tier 1 - Foundation
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 export { Button, type ButtonProps, buttonVariants } from './components/button';
