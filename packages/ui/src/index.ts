@@ -3,6 +3,22 @@ export { Box, type BoxProps } from './components/box';
 export { Container, type ContainerProps } from './components/container';
 export { Flex, type FlexProps } from './components/flex';
 export { Grid, type GridProps } from './components/grid';
+export {
+  Article,
+  type ArticleProps,
+  Aside,
+  type AsideProps,
+  Footer,
+  type FooterProps,
+  Header,
+  type HeaderProps,
+  Main,
+  type MainProps,
+  Nav,
+  type NavProps,
+  Section,
+  type SectionProps,
+} from './components/page-layout';
 export { Stack, type StackProps } from './components/stack';
 
 // Tier 1 - Data
