@@ -82,6 +82,7 @@ export {
 
 // Tier 2 - Forms
 export { Checkbox, type CheckboxProps } from './components/checkbox';
+export { Form, type FormProps } from './components/form';
 export { FormField, type FormFieldProps } from './components/form-field';
 export { Input, type InputProps } from './components/input';
 export { Label, type LabelProps } from './components/label';
