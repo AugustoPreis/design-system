@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Blockquote, Code, Kbd, Mark } from './inline-text';
 
 const meta: Meta = {
-  title: 'Components/InlineText',
+  title: 'Tier 1/InlineText',
 };
 
 export default meta;
