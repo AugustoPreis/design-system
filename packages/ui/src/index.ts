@@ -45,6 +45,7 @@ export {
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 export { Button, type ButtonProps, buttonVariants } from './components/button';
 export { Heading, type HeadingProps } from './components/heading';
+export { Icon, type IconName, type IconProps } from './components/icon';
 export { Image, type ImageProps } from './components/image';
 export { Link, type LinkProps, linkVariants } from './components/link';
 export {
