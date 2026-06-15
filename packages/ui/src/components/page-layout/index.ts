@@ -1,0 +1,16 @@
+export {
+  Article,
+  type ArticleProps,
+  Aside,
+  type AsideProps,
+  Footer,
+  type FooterProps,
+  Header,
+  type HeaderProps,
+  Main,
+  type MainProps,
+  Nav,
+  type NavProps,
+  Section,
+  type SectionProps,
+} from './page-layout';
