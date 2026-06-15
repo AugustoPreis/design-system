@@ -124,6 +124,16 @@ export {
 
 // Tier 3 - Feedback
 export {
+  AccordionContent,
+  type AccordionContentProps,
+  AccordionItem,
+  type AccordionItemProps,
+  AccordionRoot,
+  type AccordionRootProps,
+  AccordionTrigger,
+  type AccordionTriggerProps,
+} from './components/accordion';
+export {
   Alert,
   AlertDescription,
   type AlertProps,
