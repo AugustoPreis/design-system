@@ -29,7 +29,7 @@ export const Default: Story = {
   args: { name: 'Star', size: 'md', color: 'inherit' },
 };
 
-export const Tamanhos: Story = {
+export const Sizes: Story = {
   render: () => (
     <div className="flex items-end gap-4">
       {(['xs', 'sm', 'md', 'lg', 'xl'] as const).map((s) => (
@@ -39,7 +39,7 @@ export const Tamanhos: Story = {
   ),
 };
 
-export const Cores: Story = {
+export const Colors: Story = {
   render: () => (
     <div className="flex gap-4">
       {(
@@ -58,11 +58,11 @@ export const Cores: Story = {
   ),
 };
 
-export const Semantico: Story = {
-  args: { name: 'Check', size: 'md', 'aria-label': 'Confirmado' },
+export const Semantic: Story = {
+  args: { name: 'Check', size: 'md', 'aria-label': 'Confirmed' },
 };
 
-export const IconesComuns: Story = {
+export const CommonIcons: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
       {(
