@@ -43,6 +43,13 @@ export {
 } from './components/table';
 
 // Tier 1 - Foundation
+export {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  type AvatarProps,
+  avatarVariants,
+} from './components/avatar';
 export { Badge, type BadgeProps, badgeVariants } from './components/badge';
 export { Button, type ButtonProps, buttonVariants } from './components/button';
 export { Heading, type HeadingProps } from './components/heading';
