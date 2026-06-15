@@ -66,6 +66,18 @@ export {
   TooltipTrigger,
 } from './components/tooltip';
 
+// Tier 1.5 - Inline Text
+export {
+  Blockquote,
+  type BlockquoteProps,
+  Code,
+  type CodeProps,
+  Kbd,
+  type KbdProps,
+  Mark,
+  type MarkProps,
+} from './components/inline-text';
+
 // Tier 2 - Forms
 export { Checkbox, type CheckboxProps } from './components/checkbox';
 export { FormField, type FormFieldProps } from './components/form-field';
