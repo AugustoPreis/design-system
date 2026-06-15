@@ -4,12 +4,12 @@ import { describe, expect, it } from 'vitest';
 import { Label } from './label';
 
 describe('Label', () => {
-  it('renderiza o texto filho', () => {
+  it('renders child text', () => {
     render(<Label>Email</Label>);
     expect(screen.getByText('Email')).toBeInTheDocument();
   });
 
-  it('associa ao input via htmlFor', () => {
+  it('associates input via htmlFor', () => {
     render(
       <>
         <Label htmlFor="email">Email</Label>
@@ -19,35 +19,41 @@ describe('Label', () => {
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
   });
 
-  it('exibe asterisco quando required=true', () => {
-    const { container } = render(<Label required>Nome</Label>);
-    expect(container.querySelector('[aria-hidden="true"]')).toHaveTextContent('*');
+  it('shows asterisk when required=true', () => {
+    const { container } = render(<Label required>Name</Label>);
+    expect(container.querySelector('[aria-hidden="true"]')).toHaveTextContent(
+      '*',
+    );
   });
 
-  it('não exibe asterisco quando required=false (padrão)', () => {
-    const { container } = render(<Label>Nome</Label>);
+  it('does not show asterisk when required=false (default)', () => {
+    const { container } = render(<Label>Name</Label>);
     expect(container.querySelector('[aria-hidden="true"]')).toBeNull();
   });
 
-  it('asterisco tem aria-hidden para não anunciar ao leitor de tela', () => {
-    const { container } = render(<Label required>Nome</Label>);
+  it('asterisk has aria-hidden to not announce to screen reader', () => {
+    const { container } = render(<Label required>Name</Label>);
     const asterisk = container.querySelector('span');
     expect(asterisk).toHaveAttribute('aria-hidden', 'true');
   });
 
-  it('aplica classe text-sm font-medium por padrão', () => {
-    render(<Label data-testid="label">Texto</Label>);
+  it('applies text-sm font-medium class by default', () => {
+    render(<Label data-testid="label">Text</Label>);
     expect(screen.getByTestId('label')).toHaveClass('text-sm', 'font-medium');
   });
 
-  it('aceita className customizada', () => {
-    render(<Label className="text-lg" data-testid="label">Texto</Label>);
+  it('accepts custom className', () => {
+    render(
+      <Label className="text-lg" data-testid="label">
+        Text
+      </Label>,
+    );
     expect(screen.getByTestId('label')).toHaveClass('text-lg');
   });
 
-  it('encaminha ref corretamente', () => {
+  it('forwards ref correctly', () => {
     const ref = { current: null };
-    render(<Label ref={ref}>Texto</Label>);
+    render(<Label ref={ref}>Text</Label>);
     expect(ref.current).not.toBeNull();
   });
 });

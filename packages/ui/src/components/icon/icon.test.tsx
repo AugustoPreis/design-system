@@ -4,59 +4,62 @@ import { describe, expect, it } from 'vitest';
 import { Icon } from './icon';
 
 describe('Icon', () => {
-  it('renderiza o ícone pelo nome', () => {
+  it('renders icon by name', () => {
     const { container } = render(<Icon name="Check" />);
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
-  it('aplica aria-hidden por padrão (sem aria-label)', () => {
+  it('applies aria-hidden by default (no aria-label)', () => {
     const { container } = render(<Icon name="Check" />);
-    expect(container.querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
+    expect(container.querySelector('svg')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
   });
 
-  it('aplica role=img e aria-label quando aria-label é fornecido', () => {
-    render(<Icon name="Check" aria-label="Confirmado" />);
-    expect(screen.getByRole('img', { name: 'Confirmado' })).toBeInTheDocument();
+  it('applies role=img and aria-label when aria-label is provided', () => {
+    render(<Icon name="Check" aria-label="Confirmed" />);
+    expect(screen.getByRole('img', { name: 'Confirmed' })).toBeInTheDocument();
   });
 
-  it('não aplica aria-hidden quando aria-label está presente', () => {
+  it('does not apply aria-hidden when aria-label is present', () => {
     render(<Icon name="Check" aria-label="OK" />);
     const svg = screen.getByRole('img');
     expect(svg).not.toHaveAttribute('aria-hidden', 'true');
   });
 
-  it('aplica tamanho xs (12px)', () => {
+  it('applies xs size (12px)', () => {
     const { container } = render(<Icon name="Check" size="xs" />);
     expect(container.querySelector('svg')).toHaveAttribute('width', '12');
   });
 
-  it('aplica tamanho md (20px) por padrão', () => {
+  it('applies md size (20px) by default', () => {
     const { container } = render(<Icon name="Check" />);
     expect(container.querySelector('svg')).toHaveAttribute('width', '20');
   });
 
-  it('aplica tamanho xl (32px)', () => {
+  it('applies xl size (32px)', () => {
     const { container } = render(<Icon name="Check" size="xl" />);
     expect(container.querySelector('svg')).toHaveAttribute('width', '32');
   });
 
-  it('aceita className customizada', () => {
+  it('accepts custom className', () => {
     const { container } = render(<Icon name="Check" className="custom" />);
     expect(container.querySelector('svg')).toHaveClass('custom');
   });
 
-  it('retorna null para nome de ícone inválido', () => {
-    // @ts-expect-error - testando nome inválido propositalmente
-    const { container } = render(<Icon name="NaoExiste" />);
+  it('returns null for invalid icon name', () => {
+    // @ts-expect-error - testing invalid name intentionally
+    const { container } = render(<Icon name="DoesNotExist" />);
     expect(container.querySelector('svg')).toBeNull();
   });
 
-  it('renderiza ícone X', () => {
+  it('renders X icon', () => {
     const { container } = render(<Icon name="X" />);
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
-  it('renderiza ícone ChevronDown', () => {
+  it('renders ChevronDown icon', () => {
     const { container } = render(<Icon name="ChevronDown" />);
     expect(container.querySelector('svg')).toBeInTheDocument();
   });

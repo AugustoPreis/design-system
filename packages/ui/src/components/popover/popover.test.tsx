@@ -2,18 +2,25 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { Button } from '../button';
-import { PopoverClose, PopoverContent, PopoverRoot, PopoverTrigger } from './popover';
+import {
+  PopoverClose,
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from './popover';
 
 function TestPopover({ defaultOpen }: { defaultOpen?: boolean }) {
   return (
     <PopoverRoot defaultOpen={defaultOpen}>
       <PopoverTrigger asChild>
-        <Button>Abrir</Button>
+        <Button>Open</Button>
       </PopoverTrigger>
       <PopoverContent>
-        <p>Conteúdo do popover</p>
+        <p>Popover content</p>
         <PopoverClose asChild>
-          <Button variant="outline" size="sm">Fechar</Button>
+          <Button variant="outline" size="sm">
+            Close
+          </Button>
         </PopoverClose>
       </PopoverContent>
     </PopoverRoot>
@@ -21,58 +28,62 @@ function TestPopover({ defaultOpen }: { defaultOpen?: boolean }) {
 }
 
 describe('Popover', () => {
-  it('não exibe conteúdo por padrão', () => {
+  it('does not show content by default', () => {
     render(<TestPopover />);
-    expect(screen.queryByText('Conteúdo do popover')).toBeNull();
+    expect(screen.queryByText('Popover content')).toBeNull();
   });
 
-  it('exibe conteúdo ao clicar no trigger', async () => {
+  it('shows content when trigger is clicked', async () => {
     render(<TestPopover />);
-    fireEvent.click(screen.getByRole('button', { name: 'Abrir' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }));
     await waitFor(() => {
-      expect(screen.getByText('Conteúdo do popover')).toBeInTheDocument();
+      expect(screen.getByText('Popover content')).toBeInTheDocument();
     });
   });
 
-  it('fecha ao clicar no PopoverClose', async () => {
+  it('closes when PopoverClose is clicked', async () => {
     render(<TestPopover />);
-    fireEvent.click(screen.getByRole('button', { name: 'Abrir' }));
-    await waitFor(() => expect(screen.getByText('Conteúdo do popover')).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: 'Fechar' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }));
+    await waitFor(() =>
+      expect(screen.getByText('Popover content')).toBeInTheDocument(),
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Close' }));
     await waitFor(() => {
-      expect(screen.queryByText('Conteúdo do popover')).toBeNull();
+      expect(screen.queryByText('Popover content')).toBeNull();
     });
   });
 
-  it('fecha ao pressionar Escape', async () => {
+  it('closes when Escape is pressed', async () => {
     render(<TestPopover />);
-    fireEvent.click(screen.getByRole('button', { name: 'Abrir' }));
-    await waitFor(() => expect(screen.getByText('Conteúdo do popover')).toBeInTheDocument());
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }));
+    await waitFor(() =>
+      expect(screen.getByText('Popover content')).toBeInTheDocument(),
+    );
     fireEvent.keyDown(document, { key: 'Escape' });
     await waitFor(() => {
-      expect(screen.queryByText('Conteúdo do popover')).toBeNull();
+      expect(screen.queryByText('Popover content')).toBeNull();
     });
   });
 
-  it('renderiza aberto quando defaultOpen=true', async () => {
+  it('renders open when defaultOpen=true', async () => {
     render(<TestPopover defaultOpen />);
     await waitFor(() => {
-      expect(screen.getByText('Conteúdo do popover')).toBeInTheDocument();
+      expect(screen.getByText('Popover content')).toBeInTheDocument();
     });
   });
 
-  it('aplica className customizado ao PopoverContent', async () => {
+  it('applies custom className to PopoverContent', async () => {
     render(
       <PopoverRoot defaultOpen>
         <PopoverTrigger>Trigger</PopoverTrigger>
-        <PopoverContent className="minha-classe-custom">
-          <p>Conteúdo</p>
+        <PopoverContent className="my-custom-class">
+          <p>Content</p>
         </PopoverContent>
       </PopoverRoot>,
     );
     await waitFor(() => {
-      const content = screen.getByText('Conteúdo').parentElement;
-      expect(content).toHaveClass('minha-classe-custom');
+      const content = screen.getByText('Content').parentElement;
+      expect(content).toHaveClass('my-custom-class');
     });
   });
 });

@@ -19,18 +19,18 @@ export const Default: Story = {
       className="flex flex-col gap-4 w-80"
       onSubmit={(e) => e.preventDefault()}
     >
-      <FormField label="Nome" htmlFor="nome">
-        <Input id="nome" placeholder="Seu nome" />
+      <FormField label="Name" htmlFor="name">
+        <Input id="name" placeholder="Your name" />
       </FormField>
       <FormField label="Email" htmlFor="email">
-        <Input id="email" type="email" placeholder="seu@email.com" />
+        <Input id="email" type="email" placeholder="your@email.com" />
       </FormField>
-      <Button type="submit">Enviar</Button>
+      <Button type="submit">Submit</Button>
     </Form>
   ),
 };
 
-export const ComValidacao: Story = {
+export const WithValidation: Story = {
   render: () => (
     <Form
       className="flex flex-col gap-4 w-80"
@@ -41,11 +41,11 @@ export const ComValidacao: Story = {
         label="Email"
         htmlFor="email-req"
         required
-        error="Email inválido"
+        error="Invalid email"
       >
-        <Input id="email-req" type="email" error placeholder="seu@email.com" />
+        <Input id="email-req" type="email" error placeholder="your@email.com" />
       </FormField>
-      <Button type="submit">Enviar</Button>
+      <Button type="submit">Submit</Button>
     </Form>
   ),
 };

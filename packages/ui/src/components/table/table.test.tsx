@@ -15,17 +15,17 @@ import {
 function renderTable() {
   return render(
     <Table>
-      <TableCaption>Lista de usuários</TableCaption>
+      <TableCaption>User list</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Nome</TableHead>
+          <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell>João</TableCell>
-          <TableCell>joao@email.com</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>john@email.com</TableCell>
         </TableRow>
       </TableBody>
       <TableFooter>
@@ -38,7 +38,7 @@ function renderTable() {
 }
 
 describe('Table', () => {
-  it('renderiza estrutura completa', () => {
+  it('renders full structure', () => {
     const { container } = renderTable();
     expect(container.querySelector('table')).toBeInTheDocument();
     expect(container.querySelector('thead')).toBeInTheDocument();
@@ -46,36 +46,36 @@ describe('Table', () => {
     expect(container.querySelector('tfoot')).toBeInTheDocument();
   });
 
-  it('Table tem wrapper de scroll horizontal', () => {
+  it('Table has horizontal scroll wrapper', () => {
     const { container } = renderTable();
     const wrapper = container.firstElementChild;
     expect(wrapper).toHaveClass('overflow-auto');
   });
 
-  it('TableHead tem scope=col por padrão', () => {
+  it('TableHead has scope=col by default', () => {
     const { container } = renderTable();
     const ths = container.querySelectorAll('th');
     ths.forEach((th) => expect(th).toHaveAttribute('scope', 'col'));
   });
 
-  it('TableCaption renderiza legenda', () => {
+  it('TableCaption renders caption', () => {
     renderTable();
-    expect(screen.getByText('Lista de usuários')).toBeInTheDocument();
+    expect(screen.getByText('User list')).toBeInTheDocument();
   });
 
-  it('TableRow tem hover state', () => {
+  it('TableRow has hover state', () => {
     const { container } = renderTable();
     const rows = container.querySelectorAll('tr');
     rows.forEach((row) => expect(row).toHaveClass('hover:bg-muted/50'));
   });
 
-  it('TableCell renderiza dados', () => {
+  it('TableCell renders data', () => {
     renderTable();
-    expect(screen.getByText('João')).toBeInTheDocument();
-    expect(screen.getByText('joao@email.com')).toBeInTheDocument();
+    expect(screen.getByText('John')).toBeInTheDocument();
+    expect(screen.getByText('john@email.com')).toBeInTheDocument();
   });
 
-  it('aceita className em todos os sub-componentes', () => {
+  it('accepts className in all sub-components', () => {
     const { container } = render(
       <Table className="custom-table">
         <TableBody>
@@ -90,9 +90,17 @@ describe('Table', () => {
     expect(container.querySelector('td')).toHaveClass('custom-cell');
   });
 
-  it('encaminha ref em Table', () => {
+  it('forwards ref in Table', () => {
     const ref = { current: null };
-    render(<Table ref={ref}><TableBody><TableRow><TableCell>X</TableCell></TableRow></TableBody></Table>);
+    render(
+      <Table ref={ref}>
+        <TableBody>
+          <TableRow>
+            <TableCell>X</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
     expect(ref.current).not.toBeNull();
   });
 });

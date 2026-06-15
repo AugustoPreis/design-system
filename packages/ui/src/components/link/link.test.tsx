@@ -4,61 +4,85 @@ import { describe, expect, it } from 'vitest';
 import { Link } from './link';
 
 describe('Link', () => {
-  it('renderiza o texto filho', () => {
-    render(<Link href="/test">Clique aqui</Link>);
-    expect(screen.getByRole('link', { name: 'Clique aqui' })).toBeInTheDocument();
+  it('renders child text', () => {
+    render(<Link href="/test">Click here</Link>);
+    expect(
+      screen.getByRole('link', { name: 'Click here' }),
+    ).toBeInTheDocument();
   });
 
-  it('renderiza com href correto', () => {
-    render(<Link href="/sobre">Sobre</Link>);
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/sobre');
+  it('renders with correct href', () => {
+    render(<Link href="/about">About</Link>);
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/about');
   });
 
-  it('adiciona target e rel quando external=true', () => {
-    render(<Link href="https://externo.com" external>Externo</Link>);
+  it('adds target and rel when external=true', () => {
+    render(
+      <Link href="https://external.com" external>
+        External
+      </Link>,
+    );
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  it('não adiciona target/rel quando external=false', () => {
-    render(<Link href="/interno">Interno</Link>);
+  it('does not add target/rel when external=false', () => {
+    render(<Link href="/internal">Internal</Link>);
     const link = screen.getByRole('link');
     expect(link).not.toHaveAttribute('target');
     expect(link).not.toHaveAttribute('rel');
   });
 
-  it('aplica classe de variante default', () => {
-    render(<Link href="/" data-testid="link">Home</Link>);
+  it('applies default variant class', () => {
+    render(
+      <Link href="/" data-testid="link">
+        Home
+      </Link>,
+    );
     expect(screen.getByTestId('link')).toHaveClass('text-primary');
   });
 
-  it('aplica classe de variante muted', () => {
-    render(<Link href="/" variant="muted" data-testid="link">Home</Link>);
+  it('applies muted variant class', () => {
+    render(
+      <Link href="/" variant="muted" data-testid="link">
+        Home
+      </Link>,
+    );
     expect(screen.getByTestId('link')).toHaveClass('text-muted-foreground');
   });
 
-  it('renderiza como elemento filho quando asChild=true', () => {
+  it('renders as child element when asChild=true', () => {
     render(
       <Link asChild>
-        <button type="button">Botão como link</button>
+        <button type="button">Button as link</button>
       </Link>,
     );
-    expect(screen.getByRole('button', { name: 'Botão como link' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Button as link' }),
+    ).toBeInTheDocument();
   });
 
-  it('encaminha ref corretamente', () => {
+  it('forwards ref correctly', () => {
     const ref = { current: null };
-    render(<Link href="/" ref={ref}>Link</Link>);
+    render(
+      <Link href="/" ref={ref}>
+        Link
+      </Link>,
+    );
     expect(ref.current).not.toBeNull();
   });
 
-  it('aceita className customizada', () => {
-    render(<Link href="/" className="custom-class" data-testid="link">Link</Link>);
+  it('accepts custom className', () => {
+    render(
+      <Link href="/" className="custom-class" data-testid="link">
+        Link
+      </Link>,
+    );
     expect(screen.getByTestId('link')).toHaveClass('custom-class');
   });
 
-  it('external com target manual não duplica atributos', () => {
+  it('external with manual target does not duplicate attributes', () => {
     render(
       <Link href="https://x.com" external target="_self" data-testid="link">
         Link

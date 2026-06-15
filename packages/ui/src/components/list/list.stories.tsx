@@ -7,34 +7,34 @@ export default {
   tags: ['autodocs'],
 };
 
-export const NaoOrdenada: StoryObj = {
+export const Unordered: StoryObj = {
   render: () => (
     <List gap="sm">
-      <ListItem>Primeiro item</ListItem>
-      <ListItem>Segundo item</ListItem>
-      <ListItem>Terceiro item</ListItem>
+      <ListItem>First item</ListItem>
+      <ListItem>Second item</ListItem>
+      <ListItem>Third item</ListItem>
     </List>
   ),
 };
 
-export const Ordenada: StoryObj = {
+export const Ordered: StoryObj = {
   render: () => (
     <OrderedList gap="sm">
-      <ListItem>Instalar dependências</ListItem>
-      <ListItem>Configurar o ambiente</ListItem>
-      <ListItem>Executar o projeto</ListItem>
+      <ListItem>Install dependencies</ListItem>
+      <ListItem>Configure the environment</ListItem>
+      <ListItem>Run the project</ListItem>
     </OrderedList>
   ),
 };
 
-export const SemEstilo: StoryObj = {
+export const Unstyled: StoryObj = {
   render: () => (
     <List unstyled gap="md">
       <ListItem className="flex items-center gap-2">
-        <span>✓</span> Item com ícone customizado
+        <span>✓</span> Item with custom icon
       </ListItem>
       <ListItem className="flex items-center gap-2">
-        <span>✓</span> Item com ícone customizado
+        <span>✓</span> Item with custom icon
       </ListItem>
     </List>
   ),

@@ -8,52 +8,56 @@ const meta: Meta = {
 
 export default meta;
 
-export const CodigoInline: StoryObj = {
+export const InlineCode: StoryObj = {
   render: () => (
     <p className="text-sm">
-      Para instalar, execute <Code>npm install @ds/ui</Code> no terminal.
+      To install, run <Code>npm install @ds/ui</Code> in the terminal.
     </p>
   ),
 };
 
-export const TeclasDeTeclado: StoryObj = {
+export const KeyboardKeys: StoryObj = {
   render: () => (
     <p className="text-sm">
-      Pressione <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd> para copiar e <Kbd>Ctrl</Kbd> + <Kbd>V</Kbd> para
-      colar.
+      Press <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd> to copy and <Kbd>Ctrl</Kbd> +{' '}
+      <Kbd>V</Kbd> to paste.
     </p>
   ),
 };
 
-export const TexoDestacado: StoryObj = {
+export const HighlightedText: StoryObj = {
   render: () => (
     <p className="text-sm">
-      Este é um parágrafo com <Mark>texto destacado</Mark> para chamar atenção do leitor.
+      This is a paragraph with <Mark>highlighted text</Mark> to draw the
+      reader&apos;s attention.
     </p>
   ),
 };
 
-export const Citacao: StoryObj = {
+export const Quote: StoryObj = {
   render: () => (
     <Blockquote>
-      &ldquo;Design não é apenas aparência. Design é como funciona.&rdquo; — Steve Jobs
+      &ldquo;Design is not just what it looks like and feels like. Design is how
+      it works.&rdquo; — Steve Jobs
     </Blockquote>
   ),
 };
 
-export const Combinados: StoryObj = {
+export const Combined: StoryObj = {
   render: () => (
     <div className="space-y-4">
       <p className="text-sm">
-        Use <Code>git commit -m &quot;mensagem&quot;</Code> para salvar suas mudanças.
+        Use <Code>git commit -m &quot;message&quot;</Code> to save your changes.
       </p>
       <p className="text-sm">
-        Pressione <Kbd>Ctrl</Kbd> + <Kbd>Z</Kbd> para desfazer a última ação.
+        Press <Kbd>Ctrl</Kbd> + <Kbd>Z</Kbd> to undo the last action.
       </p>
       <p className="text-sm">
-        Preste atenção neste <Mark>ponto importante</Mark> antes de continuar.
+        Pay attention to this <Mark>important point</Mark> before continuing.
       </p>
-      <Blockquote>A simplicidade é a sofisticação máxima. — Leonardo da Vinci</Blockquote>
+      <Blockquote>
+        Simplicity is the ultimate sophistication. — Leonardo da Vinci
+      </Blockquote>
     </div>
   ),
 };

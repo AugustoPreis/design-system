@@ -1,4 +1,9 @@
-import { forwardRef, type HTMLAttributes, type TdHTMLAttributes, type ThHTMLAttributes } from 'react';
+import {
+  forwardRef,
+  type HTMLAttributes,
+  type TdHTMLAttributes,
+  type ThHTMLAttributes,
+} from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -33,7 +38,11 @@ TableHeader.displayName = 'TableHeader';
 
 const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
   ({ className, ...props }, ref) => (
-    <tbody ref={ref} className={cn('[&_tr:last-child]:border-0', className)} {...props} />
+    <tbody
+      ref={ref}
+      className={cn('[&_tr:last-child]:border-0', className)}
+      {...props}
+    />
   ),
 );
 TableBody.displayName = 'TableBody';
@@ -80,11 +89,7 @@ TableHead.displayName = 'TableHead';
 
 const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className, ...props }, ref) => (
-    <td
-      ref={ref}
-      className={cn('p-4 align-middle', className)}
-      {...props}
-    />
+    <td ref={ref} className={cn('p-4 align-middle', className)} {...props} />
   ),
 );
 TableCell.displayName = 'TableCell';

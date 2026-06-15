@@ -13,72 +13,91 @@ function renderAccordion(type: 'single' | 'multiple' = 'single') {
   return render(
     <AccordionRoot type={type} collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger>Pergunta 1</AccordionTrigger>
-        <AccordionContent>Resposta 1</AccordionContent>
+        <AccordionTrigger>Question 1</AccordionTrigger>
+        <AccordionContent>Answer 1</AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Pergunta 2</AccordionTrigger>
-        <AccordionContent>Resposta 2</AccordionContent>
+        <AccordionTrigger>Question 2</AccordionTrigger>
+        <AccordionContent>Answer 2</AccordionContent>
       </AccordionItem>
     </AccordionRoot>,
   );
 }
 
 describe('Accordion', () => {
-  it('renderiza os triggers', () => {
+  it('renders triggers', () => {
     renderAccordion();
-    expect(screen.getByRole('button', { name: /Pergunta 1/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Pergunta 2/ })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Question 1/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Question 2/ }),
+    ).toBeInTheDocument();
   });
 
-  it('conteúdo está fechado por padrão', () => {
+  it('content is closed by default', () => {
     renderAccordion();
-    expect(screen.getByRole('button', { name: /Pergunta 1/ })).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: /Question 1/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
   });
 
-  it('abre item ao clicar no trigger', async () => {
+  it('opens item when trigger is clicked', async () => {
     const user = userEvent.setup();
     renderAccordion();
-    await user.click(screen.getByRole('button', { name: /Pergunta 1/ }));
-    expect(screen.getByText('Resposta 1')).toBeVisible();
+    await user.click(screen.getByRole('button', { name: /Question 1/ }));
+    expect(screen.getByText('Answer 1')).toBeVisible();
   });
 
-  it('fecha item ao clicar novamente (collapsible)', async () => {
+  it('closes item when clicked again (collapsible)', async () => {
     const user = userEvent.setup();
     renderAccordion();
-    const trigger = screen.getByRole('button', { name: /Pergunta 1/ });
+    const trigger = screen.getByRole('button', { name: /Question 1/ });
     await user.click(trigger);
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('type=single fecha item anterior ao abrir novo', async () => {
+  it('type=single closes previous item when opening new one', async () => {
     const user = userEvent.setup();
     renderAccordion('single');
-    await user.click(screen.getByRole('button', { name: /Pergunta 1/ }));
-    await user.click(screen.getByRole('button', { name: /Pergunta 2/ }));
-    expect(screen.getByRole('button', { name: /Pergunta 1/ })).toHaveAttribute('aria-expanded', 'false');
-    expect(screen.getByRole('button', { name: /Pergunta 2/ })).toHaveAttribute('aria-expanded', 'true');
+    await user.click(screen.getByRole('button', { name: /Question 1/ }));
+    await user.click(screen.getByRole('button', { name: /Question 2/ }));
+    expect(screen.getByRole('button', { name: /Question 1/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+    expect(screen.getByRole('button', { name: /Question 2/ })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
   });
 
-  it('type=multiple permite dois itens abertos', async () => {
+  it('type=multiple allows two items open at the same time', async () => {
     const user = userEvent.setup();
     renderAccordion('multiple');
-    await user.click(screen.getByRole('button', { name: /Pergunta 1/ }));
-    await user.click(screen.getByRole('button', { name: /Pergunta 2/ }));
-    expect(screen.getByText('Resposta 1')).toBeVisible();
-    expect(screen.getByText('Resposta 2')).toBeVisible();
+    await user.click(screen.getByRole('button', { name: /Question 1/ }));
+    await user.click(screen.getByRole('button', { name: /Question 2/ }));
+    expect(screen.getByText('Answer 1')).toBeVisible();
+    expect(screen.getByText('Answer 2')).toBeVisible();
   });
 
-  it('trigger tem aria-expanded=false quando fechado', () => {
+  it('trigger has aria-expanded=false when closed', () => {
     renderAccordion();
-    expect(screen.getByRole('button', { name: /Pergunta 1/ })).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: /Question 1/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
   });
 
-  it('trigger tem aria-expanded=true quando aberto', async () => {
+  it('trigger has aria-expanded=true when open', async () => {
     const user = userEvent.setup();
     renderAccordion();
-    await user.click(screen.getByRole('button', { name: /Pergunta 1/ }));
-    expect(screen.getByRole('button', { name: /Pergunta 1/ })).toHaveAttribute('aria-expanded', 'true');
+    await user.click(screen.getByRole('button', { name: /Question 1/ }));
+    expect(screen.getByRole('button', { name: /Question 1/ })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
   });
 });

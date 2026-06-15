@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { Avatar, AvatarFallback, AvatarImage } from './avatar';
 
 describe('Avatar', () => {
-  it('renderiza o fallback quando não há imagem', () => {
+  it('renders fallback when there is no image', () => {
     render(
       <Avatar>
         <AvatarFallback>JS</AvatarFallback>
@@ -13,7 +13,7 @@ describe('Avatar', () => {
     expect(screen.getByText('JS')).toBeInTheDocument();
   });
 
-  it('aplica variante de tamanho xs', () => {
+  it('applies xs size variant', () => {
     render(
       <Avatar size="xs" data-testid="avatar">
         <AvatarFallback>XS</AvatarFallback>
@@ -22,7 +22,7 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('h-6', 'w-6');
   });
 
-  it('aplica variante de tamanho sm', () => {
+  it('applies sm size variant', () => {
     render(
       <Avatar size="sm" data-testid="avatar">
         <AvatarFallback>SM</AvatarFallback>
@@ -31,7 +31,7 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('h-8', 'w-8');
   });
 
-  it('aplica variante de tamanho md por padrão', () => {
+  it('applies md size variant by default', () => {
     render(
       <Avatar data-testid="avatar">
         <AvatarFallback>MD</AvatarFallback>
@@ -40,7 +40,7 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('h-10', 'w-10');
   });
 
-  it('aplica variante de tamanho lg', () => {
+  it('applies lg size variant', () => {
     render(
       <Avatar size="lg" data-testid="avatar">
         <AvatarFallback>LG</AvatarFallback>
@@ -49,7 +49,7 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('h-12', 'w-12');
   });
 
-  it('aplica variante de tamanho xl', () => {
+  it('applies xl size variant', () => {
     render(
       <Avatar size="xl" data-testid="avatar">
         <AvatarFallback>XL</AvatarFallback>
@@ -58,7 +58,7 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('h-16', 'w-16');
   });
 
-  it('aplica className customizado ao Avatar', () => {
+  it('applies custom className to Avatar', () => {
     render(
       <Avatar className="border-2" data-testid="avatar">
         <AvatarFallback>AB</AvatarFallback>
@@ -67,18 +67,18 @@ describe('Avatar', () => {
     expect(screen.getByTestId('avatar')).toHaveClass('border-2');
   });
 
-  it('exibe fallback quando AvatarImage não carrega em jsdom', () => {
+  it('shows fallback when AvatarImage fails to load in jsdom', () => {
     render(
       <Avatar>
-        <AvatarImage src="https://example.com/avatar.jpg" alt="Usuário" />
+        <AvatarImage src="https://example.com/avatar.jpg" alt="User" />
         <AvatarFallback>AB</AvatarFallback>
       </Avatar>,
     );
-    // jsdom não carrega imagens, Radix Avatar exibe o fallback
+    // jsdom does not load images, Radix Avatar shows the fallback
     expect(screen.getByText('AB')).toBeInTheDocument();
   });
 
-  it('aplica className customizado ao AvatarFallback', () => {
+  it('applies custom className to AvatarFallback', () => {
     render(
       <Avatar>
         <AvatarFallback className="bg-primary text-white">AB</AvatarFallback>

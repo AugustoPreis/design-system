@@ -41,7 +41,7 @@ function Icon({
   const LucideIcon = icons[name];
 
   if (!LucideIcon) {
-    console.warn(`[Icon] Ícone "${name}" não encontrado em lucide-react`);
+    console.warn(`[Icon] Icon "${name}" not found in lucide-react`);
     return null;
   }
 

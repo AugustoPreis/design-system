@@ -16,7 +16,7 @@ const meta: Meta<typeof Avatar> = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-export const ComImagem: Story = {
+export const WithImage: Story = {
   render: (args) => (
     <Avatar {...args}>
       <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
@@ -25,7 +25,7 @@ export const ComImagem: Story = {
   ),
 };
 
-export const ComFallback: Story = {
+export const WithFallback: Story = {
   render: (args) => (
     <Avatar {...args}>
       <AvatarFallback>JS</AvatarFallback>
@@ -33,7 +33,7 @@ export const ComFallback: Story = {
   ),
 };
 
-export const Tamanhos: Story = {
+export const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-4">
       <Avatar size="xs">
@@ -55,7 +55,7 @@ export const Tamanhos: Story = {
   ),
 };
 
-export const Grupo: Story = {
+export const Groups: Story = {
   render: () => (
     <div className="flex -space-x-2">
       <Avatar className="border-2 border-background">

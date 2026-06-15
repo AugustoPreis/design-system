@@ -11,7 +11,14 @@ const meta: Meta<typeof Icon> = {
     size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
-      options: ['inherit', 'muted', 'primary', 'destructive', 'success', 'warning'],
+      options: [
+        'inherit',
+        'muted',
+        'primary',
+        'destructive',
+        'success',
+        'warning',
+      ],
     },
   },
 };
@@ -35,7 +42,16 @@ export const Tamanhos: Story = {
 export const Cores: Story = {
   render: () => (
     <div className="flex gap-4">
-      {(['inherit', 'muted', 'primary', 'destructive', 'success', 'warning'] as const).map((c) => (
+      {(
+        [
+          'inherit',
+          'muted',
+          'primary',
+          'destructive',
+          'success',
+          'warning',
+        ] as const
+      ).map((c) => (
         <Icon key={c} name="Heart" size="lg" color={c} />
       ))}
     </div>
@@ -49,9 +65,30 @@ export const Semantico: Story = {
 export const IconesComuns: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      {(['Check', 'X', 'ChevronDown', 'ChevronUp', 'ChevronLeft', 'ChevronRight',
-        'Search', 'Settings', 'User', 'Home', 'Menu', 'Plus', 'Minus', 'Edit',
-        'Trash2', 'Download', 'Upload', 'ExternalLink', 'Copy', 'Eye'] as const).map((name) => (
+      {(
+        [
+          'Check',
+          'X',
+          'ChevronDown',
+          'ChevronUp',
+          'ChevronLeft',
+          'ChevronRight',
+          'Search',
+          'Settings',
+          'User',
+          'Home',
+          'Menu',
+          'Plus',
+          'Minus',
+          'Edit',
+          'Trash2',
+          'Download',
+          'Upload',
+          'ExternalLink',
+          'Copy',
+          'Eye',
+        ] as const
+      ).map((name) => (
         <div key={name} className="flex flex-col items-center gap-1 text-xs">
           <Icon name={name} size="md" />
           <span>{name}</span>

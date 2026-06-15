@@ -19,14 +19,12 @@ const listVariants = cva('', {
 });
 
 export interface ListProps
-  extends HTMLAttributes<HTMLUListElement>,
-    VariantProps<typeof listVariants> {
+  extends HTMLAttributes<HTMLUListElement>, VariantProps<typeof listVariants> {
   unstyled?: boolean;
 }
 
 export interface OrderedListProps
-  extends HTMLAttributes<HTMLOListElement>,
-    VariantProps<typeof listVariants> {
+  extends HTMLAttributes<HTMLOListElement>, VariantProps<typeof listVariants> {
   unstyled?: boolean;
 }
 

@@ -13,9 +13,18 @@ export default {
 };
 
 const faq = [
-  { q: 'Como faço para cancelar?', r: 'Acesse configurações e clique em cancelar plano.' },
-  { q: 'Aceita cartão de crédito?', r: 'Sim, aceitamos todos os cartões das bandeiras principais.' },
-  { q: 'Tem período de teste?', r: 'Sim, 14 dias grátis sem necessidade de cartão.' },
+  {
+    question: 'How do I cancel?',
+    answer: 'Go to settings and click on cancel plan.',
+  },
+  {
+    question: 'Do you accept credit cards?',
+    answer: 'Yes, we accept all major card brands.',
+  },
+  {
+    question: 'Is there a trial period?',
+    answer: 'Yes, 14 days free with no card required.',
+  },
 ];
 
 export const Single: StoryObj = {
@@ -23,8 +32,8 @@ export const Single: StoryObj = {
     <AccordionRoot type="single" collapsible className="w-96">
       {faq.map((item, i) => (
         <AccordionItem key={i} value={`item-${i}`}>
-          <AccordionTrigger>{item.q}</AccordionTrigger>
-          <AccordionContent>{item.r}</AccordionContent>
+          <AccordionTrigger>{item.question}</AccordionTrigger>
+          <AccordionContent>{item.answer}</AccordionContent>
         </AccordionItem>
       ))}
     </AccordionRoot>
@@ -36,8 +45,8 @@ export const Multiple: StoryObj = {
     <AccordionRoot type="multiple" className="w-96">
       {faq.map((item, i) => (
         <AccordionItem key={i} value={`item-${i}`}>
-          <AccordionTrigger>{item.q}</AccordionTrigger>
-          <AccordionContent>{item.r}</AccordionContent>
+          <AccordionTrigger>{item.question}</AccordionTrigger>
+          <AccordionContent>{item.answer}</AccordionContent>
         </AccordionItem>
       ))}
     </AccordionRoot>

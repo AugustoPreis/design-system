@@ -14,20 +14,20 @@ export default meta;
 type Story = StoryObj<typeof Label>;
 
 export const Default: Story = {
-  args: { children: 'Nome completo', htmlFor: 'nome' },
+  args: { children: 'Full name', htmlFor: 'full-name' },
 };
 
 export const Required: Story = {
   args: { children: 'Email', htmlFor: 'email', required: true },
 };
 
-export const AssociadoAInput: Story = {
+export const AssociatedWithInput: Story = {
   render: () => (
     <div className="flex flex-col gap-1">
-      <Label htmlFor="campo" required>
+      <Label htmlFor="field" required>
         Email
       </Label>
-      <input id="campo" type="email" className="border rounded px-2 py-1" />
+      <input id="field" type="email" className="border rounded px-2 py-1" />
     </div>
   ),
 };

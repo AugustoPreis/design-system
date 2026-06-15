@@ -8,7 +8,10 @@ export interface DividerProps extends HTMLAttributes<HTMLHRElement> {
 }
 
 const Divider = forwardRef<HTMLHRElement, DividerProps>(
-  ({ className, orientation = 'horizontal', decorative = true, ...props }, ref) => {
+  (
+    { className, orientation = 'horizontal', decorative = true, ...props },
+    ref,
+  ) => {
     return (
       <hr
         ref={ref}
@@ -16,7 +19,9 @@ const Divider = forwardRef<HTMLHRElement, DividerProps>(
         aria-orientation={decorative ? undefined : orientation}
         className={cn(
           'shrink-0 border-border',
-          orientation === 'horizontal' ? 'h-px w-full border-t' : 'h-full w-px border-l',
+          orientation === 'horizontal'
+            ? 'h-px w-full border-t'
+            : 'h-full w-px border-l',
           className,
         )}
         {...props}

@@ -19,19 +19,19 @@ export const Default: Story = {};
 export const Vertical: Story = {
   render: () => (
     <div className="flex items-center gap-4 h-8">
-      <span>Esquerda</span>
+      <span>Left</span>
       <Divider orientation="vertical" />
-      <span>Direita</span>
+      <span>Right</span>
     </div>
   ),
 };
 
-export const EntreConteudo: Story = {
+export const BetweenContent: Story = {
   render: () => (
     <div className="flex flex-col gap-4 w-64">
-      <p>Seção acima</p>
+      <p>Section above</p>
       <Divider />
-      <p>Seção abaixo</p>
+      <p>Section below</p>
     </div>
   ),
 };

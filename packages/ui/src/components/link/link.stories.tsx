@@ -16,25 +16,29 @@ export default meta;
 type Story = StoryObj<typeof Link>;
 
 export const Default: Story = {
-  args: { href: '#', children: 'Link padrão' },
+  args: { href: '#', children: 'Default link' },
 };
 
 export const Muted: Story = {
-  args: { href: '#', variant: 'muted', children: 'Link discreto' },
+  args: { href: '#', variant: 'muted', children: 'Muted link' },
 };
 
 export const Unstyled: Story = {
-  args: { href: '#', variant: 'unstyled', children: 'Link sem estilo' },
+  args: { href: '#', variant: 'unstyled', children: 'Unstyled link' },
 };
 
 export const External: Story = {
-  args: { href: 'https://example.com', external: true, children: 'Link externo' },
+  args: {
+    href: 'https://example.com',
+    external: true,
+    children: 'External link',
+  },
 };
 
 export const AsChild: Story = {
   render: () => (
     <Link asChild>
-      <button type="button">Botão estilizado como link</button>
+      <button type="button">Button styled as link</button>
     </Link>
   ),
 };
